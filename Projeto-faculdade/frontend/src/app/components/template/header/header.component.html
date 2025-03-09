@@ -1,0 +1,25 @@
+<mat-toolbar class="header mat-elevation-z3">
+    <span>
+        <a routerLink="/">
+            <img class="logo" src="assets/img/logo-mjv.png" alt="logo">
+        </a>
+    </span>
+    <span class="title-group">
+        <a routerLink="{{ routeUrl }}">
+            <i class="material-icons">
+             {{ icon }}
+            </i>
+            {{ title }}
+        </a>
+    </span>
+    <span class="title-group">
+        <a routerLink="/employees/list-employees">
+            <i class="material-icons">
+            person
+            </i>
+            Funcionários
+        </a>
+    </span>
+    
+    
+</mat-toolbar>
