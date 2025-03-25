@@ -25,6 +25,12 @@ public class FuncionarioController {
 	@Autowired
 	private FuncionarioService funcionarioService;
 
+	@GetMapping(path = "/listar")
+	public ResponseEntity<List<Funcionario>> listar() {
+		List<Funcionario> funcionarios = funcionarioService.listarFuncionarios();
+		return ResponseEntity.ok().body(funcionarios);
+	}
+
 	@PostMapping(path = "/inserir")
 	public ResponseEntity<Funcionario> inserir(@RequestBody FuncionarioDTO funcionarioDto) {
 		Funcionario funcionario = funcionarioService.fromDTO(funcionarioDto);
