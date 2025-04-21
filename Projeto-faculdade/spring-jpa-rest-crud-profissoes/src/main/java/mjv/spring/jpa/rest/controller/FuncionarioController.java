@@ -38,4 +38,13 @@ public class FuncionarioController {
 		return ResponseEntity.ok().body(novoFuncionario);
 	}
 
+	@PutMapping(path = "/atualizar")
+	public ResponseEntity<Funcionario> atualizar(
+			@RequestBody FuncionarioDTO funcionarioDto) {
+		Funcionario funcionario = funcionarioService.fromDTO(funcionarioDto);
+		funcionarioService.atualizarFuncionario(funcionario);
+		Funcionario funcionarioAtualizado = funcionarioService.buscarFuncionario(funcionario);
+		return ResponseEntity.ok().body(funcionarioAtualizado);
+	}
+
 }
